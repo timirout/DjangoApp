@@ -1,0 +1,43 @@
+version: "3.8"
+
+
+services:
+
+  django_app:
+    build: ./
+    container_name: post_container
+    working_dir: /post
+    restart: always
+    command: ./commands/run_docker_${MODE}.bash
+    ports:
+      - "${PORT}:${WSGI_PORT}"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+
+  postgres:
+    image: postgres:14.1
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+
+
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5000:80"
+    depends_on:
+      - postgres
+
+
+volumes:
+  pg_data: { }

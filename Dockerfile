@@ -7,6 +7,7 @@ RUN mkdir /post
 WORKDIR /post
 
 COPY ./commands ./commands
+COPY ./nginx ./nginx
 COPY ./post ./post
 COPY ./users ./users
 COPY ./manage.py ./manage.py

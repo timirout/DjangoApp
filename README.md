@@ -7,7 +7,7 @@ BackEnd   -->  Python       (Django);\
 FrontEnd  -->  JavaScript   (React);\
 DataBase  -->  SQL          (PostgreSQL);
 
-## Python version : 3.10 
+### Python version : 3.10 
 
 # Install SQL (PostgreSQL):
     Create the file repository configuration:
@@ -46,7 +46,7 @@ DataBase  -->  SQL          (PostgreSQL);
  - sudo apt update
  - apt-cache policy docker-ce
 
-# Output:
+### Output:
     docker-ce:
         Installed: (none)
         Candidate: 5:19.03.9~3-0~ubuntu-focal
@@ -57,7 +57,7 @@ DataBase  -->  SQL          (PostgreSQL);
  - sudo apt install docker-ce
  - sudo systemctl status docker
 
-# Output:
+### Output:
     ● docker.service - Docker Application Container Engine
          Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
          Active: active (running) since Tue 2020-05-19 17:00:41 UTC; 17s ago
@@ -74,11 +74,11 @@ DataBase  -->  SQL          (PostgreSQL);
  - sudo chmod +x /usr/local/bin/docker-compose
  - docker-compose --version
 
-# Output:
+### Output:
     docker-compose version 1.26.0, build 8a1c60f6
 
 # Add and Settings .env file:
- ###Create file ".env" in main project directory and add: 
+ ### Create file ".env" in main project directory and add: 
 
     # dev, stage, deploy
     MODE='dev'

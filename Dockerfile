@@ -2,14 +2,16 @@ FROM python:3.10
 
 RUN apt update || apt upgrade || apk add bash
 
-RUN mkdir /post
+RUN mkdir /prime
 
-WORKDIR /post
+WORKDIR /prime
 
+COPY ./admins ./admins
 COPY ./commands ./commands
-COPY ./nginx ./nginx
-COPY ./post ./post
+COPY ./prime ./prime
+COPY ./templates ./templates
 COPY ./users ./users
+COPY ./config.py ./config.py
 COPY ./manage.py ./manage.py
 COPY ./requirements.txt ./requirements.txt
 

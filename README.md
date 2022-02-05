@@ -1,12 +1,14 @@
 # DjangoApp
-Project Type  -->  Social Network
+Project Type  -->  Advertising Site
 
-Name Project  -->  POST
+Name Project  -->  PRIME\
+Logo Project  -->  #####
 
 BackEnd   -->  Python       (Django);\
 FrontEnd  -->  JavaScript   (React);\
 DataBase  -->  SQL          (PostgreSQL);
 
+### OS Linux (Ubuntu) : 20.04
 ### Python version : 3.10 
 
 # Install SQL (PostgreSQL):
@@ -77,19 +79,31 @@ DataBase  -->  SQL          (PostgreSQL);
 ### Output:
     docker-compose version 1.26.0, build 8a1c60f6
 
-# Add and Settings .env file:
+# Add and Tune config.py file:
+ ### Create file "config.py" in main project directory and add:
+    # Dev/Deploy
+    MODE = 'dev'
+
+
+    # PostgreSQL
+    POSTGRES_NAME = 'name_db'
+    POSTGRES_USER = 'name_user'
+    POSTGRES_PASS = 'your_password'
+    POSTGRES_HOST = 'localhost'
+
+# Add and Tune .env file:
  ### Create file ".env" in main project directory and add: 
 
-    # dev, stage, deploy
+    # Dev/Deploy
     MODE='dev'
     PORT=8000
 
 
-    # wsqi_settings
+    # Wsqi Settings
     WSGI_PORT=8000
 
 
-    # postgresql_db + django_app_db
+    # PostgreSQL DB + Backend DB
     POSTGRES_DB='name_db'
     POSTGRES_USER='name_user'
     POSTGRES_PASSWORD='your_password'
@@ -97,9 +111,13 @@ DataBase  -->  SQL          (PostgreSQL);
     POSTGRES_PORT=5432
 
 
-    # postgresql_admin
-    PGADMIN_DEFAULT_PASSWORD='your_password'
+    # PostgreSQL Admin
     PGADMIN_DEFAULT_EMAIL=your_email
+    PGADMIN_DEFAULT_PASSWORD='your_password'
+
+
+    # ---
+    DJANGO_SETTINGS_MODULE=prime.settings.${MODE}
 
 # Run and Stop Project:
     $ sudo docker-compose up --build       --> Run Project (on Ubuntu)

@@ -3,10 +3,12 @@
 import os
 import sys
 
+from config import MODE
+
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "post.settings.dev")
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', f'prime.settings.{MODE}')
     if sys.argv[1] == "test":
         print("NOTE: Running auto formation")
         print(os.popen("black .").read())
@@ -21,5 +23,5 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

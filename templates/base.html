@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PRIME</title>
+
+            <!--    CSS here    -->
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    </head>
+
+    <body>
+
+        <h1>BASE EXTENDS!</h1>
+
+        {% block content %}
+
+        {% endblock %}
+
+            <!--    JAVASCRIPT here    -->
+        <script type="text/javascript" src="{% static 'main/js/script.js' %}"></script>
+    </body>
+</html>

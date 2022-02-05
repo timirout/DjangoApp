@@ -5,10 +5,20 @@ services:
 
   django_app:
     build: ./
-    container_name: post_container
-    working_dir: /post
+    container_name: prime_container
+    working_dir: /prime
     restart: always
-    command: ./commands/run_docker_${MODE}.bash
+    command: ./commands/run_server_${MODE}.bash
+    volumes:
+      - ./admins:/prime/admins
+      - ./commands:/prime/commands
+      - media_content:/var/www/prime/media
+      - ./prime:/prime/prime
+      - static_content:/var/www/prime/static
+      - ./templates:/prime/templates
+      - ./users:/prime/users
+      - ./config.py:/prime/config.py
+      - ./manage.py:/prime/manage.py
     ports:
       - "${PORT}:${WSGI_PORT}"
     env_file:
@@ -43,6 +53,8 @@ services:
     image: nginx:1.21.5
     volumes:
       - ./nginx:/etc/nginx/conf.d
+      - static_content:/var/www/prime/static
+      - media_content:/var/www/prime/media
     ports:
       - "80:80"
     env_file:
@@ -53,3 +65,5 @@ services:
 
 volumes:
   pg_data: { }
+  static_content: { }
+  media_content: { }

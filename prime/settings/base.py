@@ -14,7 +14,7 @@ import os
 
 from pathlib import Path
 
-from config import *
+from config import POSTGRES_NAME, POSTGRES_USER, POSTGRES_PASS, POSTGRES_HOST
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

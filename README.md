@@ -108,7 +108,6 @@ DataBase  -->  SQL          (PostgreSQL);
     POSTGRES_USER='name_user'
     POSTGRES_PASSWORD='your_password'
     POSTGRES_HOST='postgres'
-    POSTGRES_PORT=5432
 
 
     # PostgreSQL Admin
